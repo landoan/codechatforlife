@@ -1,2 +1,8 @@
 <h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb blah heroku to github </p>
+
+<% form_tag do %>
+    <%= text_field_tag 'name', placeholder: 'Enter name here'  %>
+    <%= text_field_tag 'email', placeholder: 'Enter email here' %>
+    <%= password_field_tag 'password' %>
+
+<% end %>
