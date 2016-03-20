@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315172433) do
+ActiveRecord::Schema.define(version: 20160320165319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "friend_lists", force: :cascade do |t|
-    t.text     "list"
-    t.string   "type"
+  create_table "friendships", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 20160315172433) do
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.string   "recipient"
+    t.boolean  "is_read"
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,13 +46,6 @@ ActiveRecord::Schema.define(version: 20160315172433) do
     t.integer  "message_id"
     t.boolean  "is_sender"
     t.boolean  "is_readed"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users_relationships", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "list_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

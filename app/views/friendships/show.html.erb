@@ -1,0 +1,9 @@
+<% @friends.each do |f| %>
+    <%= f.name %>
+    <%= f.email %>
+    <% if (User.where("id NOT IN (?)", @user.friends.select(:id))).exists?(f.id) %>
+    <%= link_to 'Make friends', friendships_create_path(id: f.id) %>
+        <% else %>
+        Friend
+    <% end %>
+<% end %>

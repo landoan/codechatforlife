@@ -1,0 +1,7 @@
+<%= @message.content %>
+<%= @message.user.name %>
+<%= @message.user.email %>
+Recipients:
+<% @recipients.each do |r| %>
+  <%= r.email  %>
+<% end %>

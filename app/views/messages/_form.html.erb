@@ -1,0 +1,6 @@
+<%= form_for(@message) do |f| %>
+  <%= f.text_field 'recipient', placeholder: "Recipients" %>
+  <%= f.text_area 'content', placeholder:"Enter your message here" %>
+
+  <%= f.submit 'Send' %>
+<% end %>

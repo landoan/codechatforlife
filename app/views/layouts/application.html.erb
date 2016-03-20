@@ -2,12 +2,37 @@
 <html>
 <head>
   <title>CodeChat</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="header">
+  <% if authorize_user? %>
 
+  <% else %>
+      <%= image_tag(asset_path("intro.jpg"), width: "100%") %>
+  <% end %>
+</div>
+
+<div class="wrapper">
+
+  <div class="container">
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-8">
+
+    </div>
+  </div>
+</div>
+<% if authorize_user? %>
+  <%= link_to 'Inbox', messages_path %>
+  <%= link_to 'Friends', friendships_path %>
+  <%= link_to 'Sent', sent_path %>
+
+    <%= link_to 'logout', logout_path, method: :delete %>
+<% end %>
 <%= yield %>
 
 </body>

@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+
+@font-face {
+  font-family: josefin;
+  src: font-url('JosefinSans-Regular.eot');
+  src: font-url('JosefinSans-Regular.ttf') format('truetype'),
+  font-url('JosefinSans-Regular.eot?#iefix') format('embedded-opentype'),
+  font-url('JosefinSans-Regular.woff') format('woff'),
+  font-url('JosefinSans-Regular.svg#webfont') format('svg');
+}
+body, h1, h2, h3, h4, h5, p, a{
+  font-family: josefin;
+}

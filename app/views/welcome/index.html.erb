@@ -1,8 +1,38 @@
+<div class="header">
+      <%= image_tag(asset_path("intro.jpg"), width: "100%") %>
+</div>
+
+<div class="wrapper">
+
+  <div class="container">
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-8">
+
+    </div>
+  </div>
+</div>
+
 <h1>Welcome#index</h1>
 
-<% form_tag do %>
-    <%= text_field_tag 'name', placeholder: 'Enter name here'  %>
-    <%= text_field_tag 'email', placeholder: 'Enter email here' %>
-    <%= password_field_tag 'password' %>
+<div>
+<%= form_tag(login_path, method:'post') do %>
+    <%= text_field_tag 'email', nil, placeholder:  'Enter email here' %>
+    <%= password_field_tag 'password', nil, placeholder: 'enter password here' %>
+    <%= submit_tag 'Login' %>
 
 <% end %>
+</div>
+
+<div>
+<%= form_for(:user, url: register_path, method: :post) do |f| %>
+  <%= f.text_field 'name', placeholder: 'Enter name here'  %>
+  <%= f.text_field 'email', placeholder: 'Enter email here' %>
+  <%= f.password_field 'password',  placeholder: 'Enter your password'  %>
+  <%= f.password_field 'password_confirmation',  placeholder: 'Re-Enter your password'  %>
+  <%= f.submit 'Register' %>
+
+<% end %>
+
+</div>

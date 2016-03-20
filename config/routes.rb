@@ -1,5 +1,30 @@
 Rails.application.routes.draw do
+  get 'friendships/index'
+
+  get 'friendships/create'
+
+  get 'friendships/new'
+
+  get 'messages/index'
+
+  get 'messages/new'
+
+  get 'messages/create'
+
+  get 'users/index'
+
+  get 'users/create'
+
   get 'welcome/index'
+
+  delete 'logout' => 'sessions#destroy'
+  resources :users
+  resources :messages
+  resources :friendships
+  post '/register' => 'users#create'
+  post '/login' => 'sessions#create'
+  get '/sent' => 'messages#show_sent'
+  get '/show_message' => 'messages#show_message'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
