@@ -4,7 +4,7 @@
     <% if count=1 %>
         <div class="grid">
     <% end %>
-    <div class="grid-item col-md-3">
+    <div class="grid-item col-md-3 text-xs-center">
       <% if f.avatar && f.avatar!='' %>
           <%= image_tag(f.avatar, class: "card-img-top", width: "150", height: "150") %>
       <% else %>
@@ -18,8 +18,10 @@
         <% if (User.where("id NOT IN (?)", @user.friends.select(:id))).exists?(f.id) %>
             <%= link_to 'Make friends', friendships_create_path(id: f.id), class: "btn btn-success" %>
         <% else %>
-            <%= link_to "Block", nil, class: "btn btn-danger" %>
+            <%= link_to "Remove", remove_friend_path(id: f.id), class: "btn btn-warning" %>
+
         <% end %>
+
       </div>
     </div>
     <% if count==1 %>

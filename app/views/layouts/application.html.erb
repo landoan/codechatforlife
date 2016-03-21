@@ -19,7 +19,7 @@
     <div class="left-nav col-md-3">
       <div class="text-xs-center profile-field">
         <%= image_tag(asset_path("default_avatar.gif"), height: "100", class: 'img-circle center-block') %>
-        <h3><%= @user.name %></h3>
+        <a href="<%= users_edit_path %>"><h3><%= @user.name %></h3></a>
       </div>
     <div class="bootstrap-vertical-nav">
 

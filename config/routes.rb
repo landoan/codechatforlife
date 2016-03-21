@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get 'users/index'
 
   get 'users/create'
+  get 'users/edit'
+  post 'users/update'
 
   get 'welcome/index'
 
@@ -25,6 +27,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/sent' => 'messages#show_sent'
   get '/show_message' => 'messages#show_message'
+  get '/block' => 'friendships#block_friend'
+  get '/remove_friend' => 'friendships#remove_friend'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
