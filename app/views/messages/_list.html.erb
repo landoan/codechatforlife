@@ -1,0 +1,32 @@
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>From</th>
+    <th>To</th>
+    <th>Content</th>
+    <th>Sent at</th>
+    <% if current_page?(sent_path) %>
+        <th>Read at</th>
+    <% end %>
+  </tr>
+  </thead>
+  <tbody>
+  <% @messages.each do |m| %>
+      <tr class="<%= (!m.is_read.present? && m.user.id != session[:user_id]) ? 'bold-text' : '' %>">
+        <td><%= m.user.name %></td>
+        <td><%= User.where(id: m.recipient.split(",")).pluck(:email).join(', ') %></td>
+        <td>
+          <% if (!m.is_read.present? && m.user.id != session[:user_id]) %>
+          <a href="<%= show_message_path(id:m.id) %>"><%= truncate(m.content) %></a>
+              <% else %>
+              <%= truncate(m.content) %>
+          <% end %>
+        </td>
+        <td><%= m.created_at %></td>
+        <% if current_page?(sent_path) %>
+            <td><%= m.read_at ? m.read_at : 'Not read' %></td>
+        <% end %>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

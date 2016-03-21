@@ -1,7 +1,15 @@
-<%= @message.content %>
-<%= @message.user.name %>
-<%= @message.user.email %>
-Recipients:
-<% @recipients.each do |r| %>
-  <%= r.email  %>
-<% end %>
+<div class="message-show">
+  <p><strong>From: </strong> <%= @message.user.name %> - <%= @message.user.email %></p>
+  <p><strong>To: </strong>
+      <% @recipients.each do |r| %>
+          <span><%= r.email  %> </span>
+      <% end %>
+    </p>
+  <p><strong>Date sent: </strong><%= @message.created_at %></p>
+  <h5>Content</h5>
+  <p>
+    <%= @message.content %>
+  </p>
+</div>
+
+

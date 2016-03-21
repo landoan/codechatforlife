@@ -1,6 +1,30 @@
 <%= form_for(@message) do |f| %>
-  <%= f.text_field 'recipient', placeholder: "Recipients" %>
-  <%= f.text_area 'content', placeholder:"Enter your message here" %>
+    <fieldset class="form-group">
+      <label>Recipient</label>
+      <ul id="emailFriendTags"></ul>
+      <%= f.hidden_field 'recipient', id: "recipient", placeholder: "Recipients" %>
+    </fieldset>
+    <fieldset class="form-group">
+      <label for="content">Content</label>
+      <%= f.text_area 'content', placeholder:"Enter your message here", class:"form-control", rows: '10' %>
+    </fieldset>
 
-  <%= f.submit 'Send' %>
+  <%= f.submit 'Send', class:"btn btn-primary" %>
 <% end %>
+
+<script>
+  $(function(){
+    var sampleTags = <%= raw @friends.pluck(:email).to_json %>
+
+    //-------------------------------
+    // Single field
+    //-------------------------------
+    $('#emailFriendTags').tagit({
+      availableTags: sampleTags,
+      // This will make Tag-it submit a single form value, as a comma-delimited field.
+      singleField: true,
+      singleFieldNode: $('#recipient')
+    });
+
+  });
+</script>

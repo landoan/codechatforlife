@@ -48,6 +48,7 @@ group :development do
 end
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'simple_form'
+gem 'jquery-ui-rails'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end

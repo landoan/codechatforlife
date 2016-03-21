@@ -1,9 +1,5 @@
-<h1>Messages#index</h1>
-<p>Find me in app/views/messages/index.html.erb</p>
-<% @messages.each do |m| %>
-    <a href="<%= show_message_path(id:m.id) %>">
-  <%= m.content %>
-  <%= m.created_at %>
-      </a>
-<% end %>
-<%= link_to "New Message", messages_new_path %>
+<h1>Messages</h1>
+
+<%= render 'list' %>
+
+<%= link_to "New Message", messages_new_path, class:"btn btn-primary" %>
