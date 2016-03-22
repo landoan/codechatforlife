@@ -4,7 +4,7 @@ class ChatMailer < ApplicationMailer
   def send_message_email( message, recipient )
     @message = message
     @recipient = recipient
-    mail(to: recipient, subject: '[Code Chat For Life] Message from ' + message.user.name)
+    mail(to: recipient.email, subject: '[Code Chat For Life] Message from ' + message.user.name)
 
   end
 
