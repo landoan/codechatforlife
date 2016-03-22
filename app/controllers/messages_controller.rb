@@ -18,6 +18,7 @@ class MessagesController < ApplicationController
       emailList.each do |e|
         ChatMailer.send_message_email(@message, User.find_by(email:e)).deliver_now
       end
+      flash[:success] = 'You have sent a message.'
       redirect_to messages_path
     else
       flash[:error] = 'Invalid email or password'

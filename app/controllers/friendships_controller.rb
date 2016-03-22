@@ -25,6 +25,7 @@ class FriendshipsController < ApplicationController
         if second_friendship
 
           if second_friendship.save
+            flash[:success] = 'You have added new friend to your list.'
             redirect_to friendships_path
           end
 
@@ -52,7 +53,7 @@ class FriendshipsController < ApplicationController
 
     Friendship.destroy(friend1)
     Friendship.destroy(friend2)
-
+    flash[:success] = 'You have removed new friend to your list.'
     redirect_to friendships_path
 
   end
