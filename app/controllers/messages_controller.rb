@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   before_filter :set_user
   def index
-    @messages = Message.where("recipient LIKE '%?%'", @user.id)
+    @messages = Message.where("recipient LIKE '%?%'", @user.id).order('created_at DESC')
   end
 
   def new

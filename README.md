@@ -1,4 +1,4 @@
-# Pre-work - *Lan Doan Ruby Blog*
+# Assignment - *Lan Doan Code Chat*
 
 > HINT: Please
 > - include this README.md in your project and fill out the information.
@@ -11,7 +11,7 @@ Submitted by: **Doan Phuong Lan**
 
 Time spent: **20** hours spent in total
 
-URL: **https://codercancook.herokuapp.com/**
+URL: **http://codechatforlife.herokuapp.com/**
 
 ## User Stories
 
@@ -19,27 +19,21 @@ The following **required** functionality is complete:
 
 > HINT: mark the items you completed with [x]
 
-* [x] The User must be able to go two pages: Menu, and Contact Us.
-* [x] The User can see the address and phone number on the contact us page.
-* [x] There is one post that introduces the App Creator with name, picture.
-* [x] The User can see a basic google map on the Contact Us page.
-* [x] The User can navigate to a menu page with four sections:breakfast, lunch, dinner, drinks
-* [x] The user should see at least 5 food items in each section.
-* [x] Each food item should have the following fields: name, description, picture, section, price
-* [x] The User should be able to filter by section of Breakfast, Lunch, Dinner, or Drinks and see only the relevant items
-* [x] The User can sort menu items by “alphabetical”, “price low to high”, and “price high to low”.
-* [x] The User should be able to get for a menu item and see results.
-* [x] Clicking on an item in the menu brings up its detail, where you see the description and a larger picture.
-* [x] The User can click “order” on a menu item to go to a “Create Order” page.
-* [x] The User is able to fill in their name, phone number, and address.
-* [x] The User is taken to a “Thank you for your order page” that lists the name of item, the total cost (delivery should cost 20,000 VND), the user’s name, the user’s address, and the time the order was created in human-readable format (for example, Tuesday, December 1, 15:25).
-
+* [x] User can sign up by providing their email, password, and name.
+* [x] User can login using an email and password.
+* [x] After logging in, the user is taken to a page that has a list of incoming messages, sorted in descending chronological order (newest messages at top), a "new message" link, an "add friends" link, and a "sent messages" link.
+* [x] Unread messages should be bold or something similar in the list of messages.
+* [x] Clicking the "add friends" link takes the user to a page with all users listed, with a link to "add user to friends list".
+* [x] Clicking on "new message" takes the user to a page where they can write a new mesasge. The recipient field should be a dropdown, where the options are names from the user's friends.
+* [x] Clicking on "sent messages" takes the user to a page listing messages they have sent. Each message should display at what time it was read by the recipient, or "unread". The user cannot read the contents of the messages.
+* [x] User can read a message's content only once. Once the message has been read, the user will see a page indicating the message has already been read.
+* [x] User can only read messages where they are the recipient.
 
 The following **optional** features are implemented:
-* [x] The User can see how many times each menu item has been viewed, and sort items by “most viewed”.
-* [x] The user can input “CODERSCHOOL” as a coupon code on the order page, which should give a 50% discount off of the order.
-* [x] The User can order more than one dish at a time.
-* [x] The User receives an email upon placing an order.
+* [x] User can specify multiple recipients per message.
+* [x] User gets an email when they receive a message, with a link to view the message.
+* [x] User gets an email when a message they have sent is read with the time at which the message was read.
+* [x] User can remove friends from their friends list.
 
 > HINT: if you are unsure how to implement the Search feature, you can Google how to implement a simple search form. For example, one of the sites you will find is [this](http://www.jorgecoca.com/buils-search-form-ruby-rails/)
 
