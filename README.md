@@ -30,6 +30,7 @@ The following **required** functionality is complete:
 * [x] User can only read messages where they are the recipient.
 
 The following **optional** features are implemented:
+* [x] User can attach an image
 * [x] User can specify multiple recipients per message.
 * [x] User gets an email when they receive a message, with a link to view the message.
 * [x] User gets an email when a message they have sent is read with the time at which the message was read.
