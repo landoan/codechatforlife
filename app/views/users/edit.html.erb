@@ -16,10 +16,17 @@
       <label class="password_confirmation">Re enter your password </label>
       <%= f.password_field 'password_confirmation',  placeholder: 'Re-Enter your password', class:'form-control'  %>
     </fieldset>
-<!--    <fieldset class="form-group">
-      <label for="avatar">Avatar </label>
-      <input type="file" name="avatar" />
-    </fieldset>-->
+    <fieldset class="form-group">
+
+      <% if @user.avatar %>
+          <%= image_tag(@user.avatar, height: "100", class: 'img-circle') %>
+      <% else %>
+          <%= image_tag(asset_path("default_avatar.gif"), height: "100", class: 'img-circle') %>
+      <% end %>
+      <%= f.file_field :avatar  %>
+
+    </fieldset>
+
 
 
     <%= f.submit 'Update', class:'btn btn-success'  %>
