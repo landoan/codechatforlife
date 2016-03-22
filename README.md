@@ -53,17 +53,15 @@ Here's a walkthrough of implemented user stories:
 > `![Video Walkthrough](assignment_1_lan.gif)`
 >
 
-![Video Walkthrough](assignment_1_lan.gif)
+![Video Walkthrough](assignment_2_lan.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Heroku app link
 https://codercancook.herokuapp.com/
 ## Notes
-- tether problem
-- rails-ajax
-- sending email check in local
-- setting routes (nested)
+- self-relationships
+-upload image
 
 ## License
 
